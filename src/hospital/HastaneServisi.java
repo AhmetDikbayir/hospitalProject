@@ -43,48 +43,37 @@ public class HastaneServisi {
     public static void start() throws InterruptedException, IOException {
         Scanner scan = new Scanner(System.in);
         //   slowPrint("******* TEAM-DEV2 HOSPİTAL *******\n********** HOŞGELDİNİZ **********\n\n", 60);
-
-
-        boolean tercih = false;
+        int secim = -1;
         do{
             System.out.println("Lütfen giriş yapmak istediğiniz menü kodunu giriniz..\n\n" +
                 "1-HASTANE YÖNETİMİ GİRİŞİ\n" +
                 "2-DOKTOR GİRİŞİ\n" +
                 "3-HASTA GİRİŞİ\n" +
                 "4-HASTANE KADROMUZ\n" +
-                "5-ÇIKIŞ\n");
-            int secim = scan.nextInt();
+                "5-ÇIKIŞ");
+            secim = scan.nextInt();
             switch (secim) {
                 case 1:
                     HastaneServisi.hastaneServisiMenu();
-                    tercih = true;
                     break;
                 case 2:
                     DoktorServisi.doktorGirisiMenu();
-                    tercih = true;
                     break;
                 case 3:
                     HastaServisi.hastaGirisiMenu();
-                    tercih = true;
                     break;
                 case 4:
                     Islemler.iletisim();
-                    tercih = true;
                     break;
                 case 5:
                     Islemler.cikis();
-                    tercih = true;
                     break;
                 default:
                     System.out.println("HATALI GIRIS, TEKRAR DENEYINIZ!");
-                    tercih = false;
                     //break;
             }
 
-        }while(tercih);
-
-
-
+        }while(secim !=0);
 
     }
 
